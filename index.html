@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cont">
+    <canvas width="600" height="800" id="carta-porra"></canvas>
+
+    <div class="cont2">
+        <div class="cont3">
+            <label for="nome">Nome do coagulo</label>
+            <textarea name="nome" id="nome">steve</textarea>
+        </div>
+
+
+        <div class="cont4">
+            <div class="cont3">
+                <label for="ataque">Ataque</label>
+                <input type="number" name="ataque" id="ataque" value="90">
+            </div>
+            <div class="cont3">
+                <label for="defesa">Defesa</label>
+                <input type="number" name="defesa" id="defesa" value="91">
+            </div>
+            <div class="cont3">
+                <label for="gamesense">Gamesense</label>
+                <input type="number" name="gamesense" id="gamesense" value="92">
+            </div>
+            <div class="cont3">
+                <label for="s">Sigmaness</label>
+                <input type="number" name="s" id="s" value="93">
+            </div>
+        </div>
+
+        <button id="processar">gerarcartasigma</button>
+    </div>
+
+    </div>
+    
+
+    <script src="codigo.js"></script>
+</body>
+</html>
