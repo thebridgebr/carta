@@ -27,9 +27,9 @@ const fs = 60;
 const div1_img = new Image();
 const div2_img = new Image();
 const div3_img = new Image();
-div1_img.src = "DIV1SM.PNG"
-div2_img.src = "DIV2SM.PNG"
-div3_img.src = "DIV3SM.PNG"
+div1_img.src = "DIV1SM.png"
+div2_img.src = "DIV2SM.png"
+div3_img.src = "DIV3SM.png"
 
 
 
