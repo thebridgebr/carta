@@ -2,27 +2,37 @@ const nome = document.getElementById("nome");
 const ataque = document.getElementById("ataque");
 const defesa = document.getElementById("defesa");
 const gamesense = document.getElementById("gamesense");
-const s = document.getElementById("s");
+const pvp = document.getElementById("pvp");
+const equipe = document.getElementById("equipe");
+const mecs = document.getElementById("mecs");
+
 
 const botao = document.getElementById("processar");
 
 
 
 const canvas = document.getElementById("carta-porra");
-const cw = 600;
-const ch = 800;
+const cw = 700;
+const ch = 900;
 const context = canvas.getContext("2d");
 context.textBaseline = "top";
+context.textAlign = "center";
 
-// const fs = 48;
-// context.font = `300 ${fs}px "minecraft"`;
-
-const fs = 50;
-context.font = `300 ${fs}px "Space Grotesk"`;
+const fs = 60;
 
 
-const bg = new Image();
-bg.src = "./aura.png"
+// const fs = 50;
+// context.font = `300 ${fs}px "Space Grotesk"`;
+
+const div1_img = new Image();
+const div2_img = new Image();
+const div3_img = new Image();
+div1_img.src = "./DIV1SM.PNG"
+div2_img.src = "./DIV2SM.PNG"
+div3_img.src = "./DIV3SM.PNG"
+
+
+
 
 async function pegar_uuid(nome){
     const minecraft_url = `https://crafthead.net/profile/${nome}`;
@@ -45,6 +55,7 @@ botao.addEventListener("click", async () => {
     const uuid = await pegar_uuid(nome.value);
 
     const foto_l = `https://visage.surgeplay.com/bust/500/${uuid}`;
+
     try{
         const r = await(fetch(foto_l));
         const d = await r.blob();
@@ -53,19 +64,53 @@ botao.addEventListener("click", async () => {
         const foto = new Image();
         foto.src = calasewing;
 
-        
         foto.onload = (() => {
+            context.font = `300 ${fs}px "Oswald"`;
+
             context.clearRect(0, 0, cw, ch);
+            //quem reclamar fala com a mao 
+            context.drawImage(div1_img, -175, -75, 1024, 1024);
+            context.drawImage(foto, 250, 75, 0+350, 0+350);
 
-            context.drawImage(bg, 0, 0, 450, 450);
-            context.drawImage(foto, 0, 0, 450, 450);
-            context.fillText(`${nome.value}`, 0, 450); 
-
-            context.fillText(`${ataque.value} ATQ`, 0, 530); 
-            context.fillText(`${defesa.value} DFS`, 250, 530); 
-            context.fillText(`${gamesense.value} GMS`, 0, 610); 
-            context.fillText(`${s.value} SIG`, 250, 610); 
+            context.textAlign = "center";
+            if (nome.value.length > 14) {
+                context.font = `300 ${fs-11}px "Oswald"`;
+                context.fillText(`${nome.value}`, 335, 470); 
+                context.font = `300 ${fs}px "Oswald"`;
+            }
+            else{
+                context.fillText(`${nome.value}`, 335, 470); 
+            }
+            context.textAlign = "start";
            
+            const stats_down = 565;
+            context.fillText(`${pvp.value}PVP`, 130, stats_down); 
+            context.fillText(`${ataque.value}ATQ`, 130, stats_down+fs); 
+            context.fillText(`${defesa.value}DEF`, 130, stats_down+fs+fs); 
+
+            context.fillText(`${equipe.value}EQP`, 380, stats_down); 
+            context.fillText(`${mecs.value}MEC`, 380, stats_down+fs); 
+            context.fillText(`${gamesense.value}GMS`, 380, stats_down+fs+fs); 
+
+
+            context.textAlign = "center";
+            context.font = `350 ${fs+15}px "Oswald"`;
+
+
+            const valores = [pvp.value , ataque.value , defesa.value , equipe.value , mecs.value , gamesense.value]
+            let media = 0;
+            for (i = 0; i < valores.length; i++){
+                media += parseInt(valores[i]);
+            }
+            console.log(media/6)
+            media = Math.trunc(media/6)
+
+
+            context.fillText(`${media}`, 190, 100); 
+            context.fillText(`ATQ`, 190, 100+fs+20); 
+            context.font = `350 ${fs}px "Oswald"`;
+
+
             URL.revokeObjectURL(calasewing);
         });
 

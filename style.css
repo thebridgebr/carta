@@ -1,4 +1,10 @@
-
+@font-face {
+    font-family: 'minecraft';
+    src: url('./Minecraft.otf') format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 body, html{
     font-size: 140%;
@@ -13,8 +19,8 @@ input, button, textarea {
 #carta-porra{
     border-style: solid;
     border-color: black;
-    width: 600px;
-    height: 800px;
+    width: 700px;
+    height: 900px;
     border-radius: 2px;
 }
 
