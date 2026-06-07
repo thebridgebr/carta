@@ -30,12 +30,6 @@ const fs = 60;
 // const fs = 50;
 // context.font = `300 ${fs}px "Space Grotesk"`;
 
-const div1_img = new Image();
-const div2_img = new Image();
-const div3_img = new Image();
-div1_img.src = "divz/DIV1SM.PNG"
-div2_img.src = "divz/DIV2SM.PNG"
-div3_img.src = "divz/DIV3SM.PNG"
 
 
 
@@ -63,7 +57,7 @@ async function criar_carta(){
     const sigmas = [
         `https://visage.surgeplay.com/bust/500/${uuid}`,
         `https://flagcdn.com/w320/${pais.value}.png`,
-        `divz/DIV${div.value}SM.PNG`
+        `divz/DIV${div.value}SM.png`
     ]
     const fp = sigmas.map(async (s) => {
         const r = await(fetch(s));
