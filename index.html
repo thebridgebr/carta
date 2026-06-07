@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <link rel="preload" href="./Minecraftia-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <title>Gerador de cartas</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,10 +21,26 @@
         <div class="cont3">
             <label for="nome">Nome do coagulo</label>
             <textarea name="nome" id="nome">steve</textarea>
+
         </div>
 
 
         <div class="cont4">
+
+            <div class="cont3">
+                <label for="div">Div</label>
+                <input type="number" name="div" id="div" value="1">
+            </div>
+            <div class="cont3">
+                <label for="pais">Código do país do coagulo</label>
+                <textarea name="pais" id="pais">br</textarea>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="cont4">
+
             <div class="cont3">
                 <label for="ataque">Ataque</label>
                 <input type="number" name="ataque" id="ataque" value="90">
@@ -51,6 +65,26 @@
                 <label for="mecs">Mecanicas</label>
                 <input type="number" name="mecs" id="mecs" value="77">
             </div>
+
+        </div>
+
+        <hr>
+
+        <div class="cont4">
+            <div class="cont3">
+                <label for="mod">Posição</label>
+                <select name="mod" id="mod">
+                    <option value="ATQ">Ataque</option>
+                    <option value="DEF">Defesa</option>
+                    <option value="HIB">Hibrido</option>
+                    <option value="AUT">Auto</option>
+                </select>
+            </div>
+             <div class="cont3">
+                <label for="escore">Escore total</label>
+                <input type="number" name="escore" id="escore" value="">
+            </div>
+
         </div>
 
         <button id="processar">gerarcartasigma</button>

@@ -9,7 +9,7 @@
 body, html{
     font-size: 140%;
 }
-input, button, textarea {
+input, button, textarea, select {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -22,6 +22,10 @@ input, button, textarea {
     width: 700px;
     height: 900px;
     border-radius: 2px;
+}
+
+hr{
+    width: 20em;
 }
 
 label{
@@ -40,9 +44,14 @@ textarea{
 input{
     width: 3em;
 }
+select{
+    width: 4em;
+}
 
 
-
+#pais{
+    width: 3em;
+}
 
 .cont{
     display: flex;
